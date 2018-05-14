@@ -1,0 +1,27 @@
+server:
+  port: 87
+spring:
+  messages:
+#国际化
+    basename: i18n/basic
+  thymeleaf:
+    cache: false
+  profiles:
+#    active: azurewin
+    active: local
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    hibernate:
+      dialect: org.hibernate.dialect.MySQL5Dialect
+      ddl-auto: update
+      show-sql: true
+
+---
+#本地
+spring:
+  profiles: local
+  datasource:
+    url: jdbc:mysql://192.168.137.101:3306/ctlinfo
+    username: root
+    password: 123456
