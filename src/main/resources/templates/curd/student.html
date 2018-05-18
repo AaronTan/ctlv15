@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-    <div th:replace="~{common/component::head}" />
+    <!--<div th:replace="~{common/component::head(pageTitle='学生管理')}" />-->
+    <div th:replace="~{common/component::head(pageTitle=#{student.page.title})}" />
+    <!--<div th:replace="~{common/component::head(targetUrl='studentIndex')}" />-->
 <!--<head>-->
     <!--<meta charset="UTF-8">-->
     <!--<title th:text="#{student.page.title}">学生页面~</title>-->
@@ -14,13 +16,13 @@
 <body>
     <p th:text="#{student.page.title}"></p>
     <!-- Start #header -->
-    <div th:replace="~{common/component::#header}" />
+    <div th:replace="~{/common/component::#header}" />
     <!-- End #header -->
     <!-- Start #sidebar -->
-    <div th:replace="~{common/component::#sidebar}" />
+    <div th:replace="~{/common/component::#sidebar(targetUrl='studentIndex')}" />
     <!-- End #sidebar -->
     <!-- Start #right-sidebar -->
-    <div th:replace="~{common/component::#right-sidebar}" />
+    <div th:replace="~{/common/component::#right-sidebar}" />
     <!-- End #right-sidebar -->
     <!-- Start #content -->
     <!--<div id="content">-->
